@@ -50,4 +50,6 @@ In this repository, I store some of my projects from my studies at the [Faculty 
 
 All materials available here serve exclusively for inspiration and study support.
 
-Unless otherwise noted in the README files in the respective directories or in the headers/contents of individual files, all material in this repository is my own work and subject to copyright.
+Unless otherwise noted in the ```README``` files in the respective directories or in the headers/contents of individual files, all material in this repository is my own work and subject to copyright.
+
+All files in this repository are available under the MIT license (see ```LICENSE-MIT.md```)
