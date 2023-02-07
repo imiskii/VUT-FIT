@@ -23,7 +23,7 @@ In this repository, I store some of my projects from my studies at the [Faculty 
 * __IZG (Computer Graphics Principles)__
 * __BAN4(English for Bachelors - Intermediate 2)__
 * __IJC (The C Programming Language)__ - 2 projects
-* __IVS (Practical Aspects of Software Design)__
+* __IVS (Practical Aspects of Software Design)__ - team project [here](https://github.com/imiskii/VUT-FIT-IVS-2)
 
 ### 3. Semester
 
@@ -32,7 +32,7 @@ In this repository, I store some of my projects from my studies at the [Faculty 
 * __IMA2 (Mathematical Analysis 2)__ - math 😁
 * __INP (Design of Computer Systems)__ - 2 projects
 * __IPT (Probability and Statistics)__ - math 😁
-* __ISS (Signals and Systems)__
+* __ISS (Signals and Systems)__ - project
 * __ITU (User Interface Programming)__ - team project [here](https://github.com/imiskii/VUT-FIT-ITU)
 
 ### 4. Semester
