@@ -1,0 +1,13 @@
+.ippcode23
+
+
+JUMPIFNEQ jmp nil@nil int@20
+
+LABEL write
+WRITE string@jump
+JUMP end
+
+LABEL jmp
+JUMPIFEQ write nil@nil nil@nil
+
+LABEL end

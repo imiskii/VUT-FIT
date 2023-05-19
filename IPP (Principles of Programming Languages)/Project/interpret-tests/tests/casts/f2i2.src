@@ -1,0 +1,13 @@
+.ippcode23
+
+DEFVAR GF@a
+DEFVAR GF@x
+
+MOVE GF@a string@97
+
+FLOAT2INT GF@x GF@a
+WRITE GF@x
+WRITE string@|
+
+FLOAT2INT GF@x int@-0x42
+WRITE GF@x

@@ -1,0 +1,4 @@
+.ippcode23
+
+WRITE string@<hello>
+WRITE string@

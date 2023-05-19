@@ -1,0 +1,27 @@
+.ippcode23
+
+DEFVAR GF@a
+DEFVAR GF@b
+DEFVAR GF@x
+
+MOVE GF@x string@aaa
+MOVE GF@a int@0
+MOVE GF@b string@chad
+
+SETCHAR GF@x GF@a GF@b
+WRITE GF@x
+WRITE string@|
+MOVE GF@x string@aaa
+
+SETCHAR GF@x int@1 GF@b
+WRITE GF@x
+WRITE string@|
+MOVE GF@x string@aaa
+
+SETCHAR GF@x GF@a string@chad 
+WRITE GF@x
+WRITE string@|
+MOVE GF@x string@aaa
+
+SETCHAR GF@x int@2 string@chad
+WRITE GF@x

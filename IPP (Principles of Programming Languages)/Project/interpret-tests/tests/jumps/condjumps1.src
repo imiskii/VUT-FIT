@@ -1,0 +1,37 @@
+.ippcode23
+
+
+DEFVAR GF@a
+DEFVAR GF@b
+DEFVAR GF@c
+MOVE GF@a int@10
+MOVE GF@b int@2
+MOVE GF@c int@10
+
+JUMPIFEQ while GF@a GF@c
+
+LABEL re
+MOVE GF@b int@10
+
+LABEL while
+
+
+JUMPIFNEQ re GF@a GF@c
+
+
+JUMP skip2
+
+
+LABEL skip1
+MOVE GF@a string@hello
+JUMPIFEQ end GF@a string@hello
+
+
+LABEL skip2
+JUMPIFNEQ skip1 string@help string@hello
+
+
+LABEL end
+WRITE GF@a
+WRITE GF@b
+WRITE GF@c

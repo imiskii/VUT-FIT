@@ -1,0 +1,31 @@
+.ippcode23
+
+DEFVAR GF@a
+DEFVAR GF@b
+DEFVAR GF@c
+DEFVAR GF@d
+
+MOVE GF@a int@2
+MOVE GF@b string@hello
+MOVE GF@c bool@false
+MOVE GF@d bool@true
+
+
+DEFVAR GF@x
+
+
+LT GF@x GF@a int@3
+WRITE GF@x
+WRITE string@|
+
+GT GF@x string@alloha GF@b
+WRITE GF@x
+WRITE string@|
+
+EQ GF@x GF@c bool@false
+WRITE GF@x
+WRITE string@|
+
+EQ GF@x nil@nil nil@nil
+WRITE GF@x
+WRITE string@|

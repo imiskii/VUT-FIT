@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<program language="IPPcode23">
+ <instruction order="1" opcode="JUMPIFEQ">
+  <arg1 type="label">jmp</arg1>
+  <arg2 type="string">20</arg2>
+  <arg3 type="int">20</arg3>
+ </instruction>
+ <instruction order="2" opcode="LABEL">
+  <arg1 type="label">jmp</arg1>
+ </instruction>
+</program>

@@ -1,0 +1,19 @@
+.ippcode23
+
+DEFVAR GF@a
+DEFVAR GF@x
+
+MOVE GF@a int@50
+
+TYPE GF@x GF@a
+WRITE GF@x
+WRITE string@|
+
+PUSHS bool@false
+POPS GF@a
+TYPE GF@x GF@a
+WRITE GF@x
+WRITE string@|
+
+TYPE GF@x nil@nil
+WRITE GF@x

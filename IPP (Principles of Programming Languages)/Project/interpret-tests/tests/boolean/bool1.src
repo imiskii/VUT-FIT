@@ -1,0 +1,37 @@
+.ippcode23
+
+DEFVAR GF@a
+DEFVAR GF@b
+DEFVAR GF@x
+
+
+MOVE GF@a bool@true
+MOVE GF@b bool@false
+
+AND GF@x GF@a GF@b
+WRITE GF@x
+WRITE string@|
+
+OR GF@x GF@a GF@b
+WRITE GF@x
+WRITE string@|
+
+AND GF@x GF@a bool@true
+WRITE GF@x
+WRITE string@|
+
+OR GF@x bool@false GF@b
+WRITE GF@x
+WRITE string@|
+
+AND GF@x bool@false bool@false
+WRITE GF@x
+WRITE string@|
+
+NOT GF@x bool@true
+WRITE GF@x
+WRITE string@|
+
+NOT GF@x GF@a
+WRITE GF@x
+

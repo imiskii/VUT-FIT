@@ -1,0 +1,95 @@
+Vysoké učení technické v Brně
+Fakulta informačních technologií
+
+ 
+Typografie a publikování 3. projekt
+Tabulky a obrázky
+
+
+
+\date{today}				Meno
+
+
+Úvodní strana
+Název práce umístněte do zlatého řezu a nezapomeňte uvést "dnešní" (today) datum a vaše jméno a příjmení.
+
+
+Tabulky
+Pro sázení tabulek můžeme použít prostředí tabbing nebo prostředí tabular.
+
+Prostředí tabbing
+Při použití tabbing vypadá tabulka následovně:
+
+Ovoce 		Cena			Množství
+Jablka		25,90			3 kg
+Hrušky		27,40			2,5 kg
+Vodní melouny	35,-			1 kus
+
+Toto prostředí se dá také použít pro sázení algoritmů, ovšem vhodnější je použít prostředí alogorithm nebo algorithm2e (viz sekce 3).
+
+Prostředí tabular
+Další možností, jak vytvořit tabulku je prostředí tabular. Tabulky pak budou vypadat takto:
+
+						Cena
+			Měna		nákup		prodej
+			EUR		22,705	25,242
+			GBP		25,931	28,828
+			USD		21,347	23,732
+
+			Tabulka 1: Tabulka kurzů k dnešnímu dni
+
+
+		
+			(...............nejaky IZLO hnus...............)
+
+Tabulka 2: Protože Kleeneho trojhodnotová logika už je "zastaralá", uvádíme si zde příklad čtyřhodnotové logiky
+
+____________________________________
+Kdyby byl problém s cline, zkuste se podívat třeba sem: http://www.abclinuxu.cz/tex/poradna/show/325037.
+
+
+Algoritmy
+Pokud budeme chtít vysázet algoritmus, můžeme použít prostředí algorithm nebo algorithm2e. Příklad použití prostředí algorithm2e viz Algoritmus 1.
+
+			(............algoritmus................)
+
+
+Obrázky
+Do našich článků můžeme samozřejmě vkládat obrázky. Pokud je obrázkem fotografie, můžeme klidně použít bitmapový soubor. Pokud by to ale mělo být nějaké schéma nebo něco podobného, je dobrým zvykem takovýto obrázek vytvořit vektorově.
+
+			(..........insert obrázek............)
+
+		Obrázek 1: Malý Etiopánek a jeho bratříček
+
+___________________________
+Pro nápovědu, jak zacházet s prostředím algorithm, můžeme zkusit tuhle stránku:
+http://ftp.cstug.cz/pub/tex/CTAN/macros/latex/contrib/algorithms/algorithms.pdf.
+Pro algorithm2e zase tuhle: http://ftp.cstug.cz/pub/tex/CTAN/macros/latex/contrib/algorithm2e/doc/algorithm2e.pdf.
+
+
+
+Rozdíl mezi vektorovým...
+
+
+			(....vektorovy obrazek...)
+
+			Obrázek 2: Vektorový obrázek
+
+
+...a bitmapovým obrázkem
+
+			(....bitmapovy obrazek....)
+
+			Obrázek 3: Bitmapový obrázek
+
+se projeví například při zvětšení.
+Odkazy (nejen ty) na obrázky 1, 2 a 3, na tabulky 1 a 2 a také na algoritmus 1 jsou udělány pomocí křížových odkazů. Pak je ovšem potřeba zdrojový soubor přeložit dvakrát.
+Vektorové obrázky lze vytvořit i přímo v Latexu, například pomocí prostředí picture.
+
+
+
+
+
+		(......vloz cmaranicu alebo prekresli Tugendhat.....)
+
+Obrázek 4: Vektorový obrázek moderního bydlení vhodného pro 21. století. (Buďto vytvořte stejný obrázek, anebo nakreslete pomocí picture váš vlastní domov.)

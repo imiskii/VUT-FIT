@@ -1,0 +1,7 @@
+.ippcode23
+
+DEFVAR GF@a
+
+MOVE GF@a int@25
+
+EXIT GF@a

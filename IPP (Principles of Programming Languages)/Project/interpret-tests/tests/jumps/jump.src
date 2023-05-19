@@ -1,0 +1,16 @@
+.ippcode23
+
+JUMP skip3
+LABEL skip1
+
+
+LABEL skip2
+DEFVAR GF@a
+MOVE GF@a int@42
+JUMP skip4
+
+LABEL skip3
+JUMP skip2
+
+LABEL skip4
+WRITE GF@a

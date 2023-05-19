@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<program language="IPPcode23">
+ <instruction order="1" opcode="DEFVAR">
+  <arg1 type="var">GF@a</arg1>
+ </instruction>
+ <instruction order="2" opcode="DEFVAR">
+  <arg1 type="var">GF@b</arg1>
+ </instruction>
+ <instruction order="3" opcode="DEFVAR">
+  <arg1 type="var">GF@x</arg1>
+ </instruction>
+ <instruction order="4" opcode="MOVE">
+  <arg1 type="var">GF@a</arg1>
+  <arg2 type="nil">nil</arg2>
+ </instruction>
+ <instruction order="5" opcode="MOVE">
+  <arg1 type="var">GF@b</arg1>
+  <arg2 type="float">+3.14</arg2>
+ </instruction>
+ <instruction order="6" opcode="PUSHS">
+  <arg1 type="int">5</arg1>
+ </instruction>
+ <instruction order="7" opcode="PUSHS">
+  <arg1 type="int">100</arg1>
+ </instruction>
+ <instruction order="8" opcode="PUSHS">
+  <arg1 type="float">-3.14</arg1>
+ </instruction>
+ <instruction order="9" opcode="PUSHS">
+  <arg1 type="float">42.42</arg1>
+ </instruction>
+ <instruction order="10" opcode="LTS"/>
+ <instruction order="11" opcode="POPS">
+  <arg1 type="var">GF@x</arg1>
+ </instruction>
+ <instruction order="12" opcode="WRITE">
+  <arg1 type="var">GF@x</arg1>
+ </instruction>
+ <instruction order="13" opcode="GTS"/>
+ <instruction order="14" opcode="POPS">
+  <arg1 type="var">GF@x</arg1>
+ </instruction>
+ <instruction order="15" opcode="WRITE">
+  <arg1 type="var">GF@x</arg1>
+ </instruction>
+ <instruction order="16" opcode="PUSHS">
+  <arg1 type="string">hello</arg1>
+ </instruction>
+ <instruction order="17" opcode="PUSHS">
+  <arg1 type="string">hello</arg1>
+ </instruction>
+ <instruction order="18" opcode="PUSHS">
+  <arg1 type="int">5</arg1>
+ </instruction>
+ <instruction order="19" opcode="PUSHS">
+  <arg1 type="float">42.42</arg1>
+ </instruction>
+ <instruction order="20" opcode="LTS"/>
+ <instruction order="21" opcode="POPS">
+  <arg1 type="var">GF@x</arg1>
+ </instruction>
+ <instruction order="22" opcode="WRITE">
+  <arg1 type="var">GF@x</arg1>
+ </instruction>
+ <instruction order="23" opcode="EQS"/>
+ <instruction order="24" opcode="POPS">
+  <arg1 type="var">GF@x</arg1>
+ </instruction>
+ <instruction order="25" opcode="WRITE">
+  <arg1 type="var">GF@x</arg1>
+ </instruction>
+ <instruction order="26" opcode="PUSHS">
+  <arg1 type="nil">nil</arg1>
+ </instruction>
+ <instruction order="27" opcode="PUSHS">
+  <arg1 type="var">GF@a</arg1>
+ </instruction>
+ <instruction order="28" opcode="EQS"/>
+ <instruction order="29" opcode="POPS">
+  <arg1 type="var">GF@x</arg1>
+ </instruction>
+ <instruction order="30" opcode="WRITE">
+  <arg1 type="var">GF@x</arg1>
+ </instruction>
+</program>

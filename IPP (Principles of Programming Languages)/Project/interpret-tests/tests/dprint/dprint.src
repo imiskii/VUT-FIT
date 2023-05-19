@@ -1,0 +1,9 @@
+.ippcode23
+
+DEFVAR GF@a
+
+MOVE GF@a string@GJ
+
+DPRINT GF@a
+DPRINT int@42
+DPRINT bool@true

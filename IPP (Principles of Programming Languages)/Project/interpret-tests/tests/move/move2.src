@@ -1,0 +1,26 @@
+.ippcode23
+
+CREATEFRAME
+
+
+DEFVAR TF@a
+DEFVAR GF@b
+
+MOVE TF@a int@0
+MOVE GF@b string@hello
+
+PUSHFRAME
+
+DEFVAR LF@c
+
+
+MOVE LF@c bool@true
+
+MOVE GF@b LF@c
+MOVE GF@b LF@a
+
+POPFRAME
+
+CREATEFRAME
+
+WRITE GF@b

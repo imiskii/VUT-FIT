@@ -1,0 +1,5 @@
+.ippcode23
+
+DEFVAR GF@x
+
+CONCAT GF@x string@hello int@5

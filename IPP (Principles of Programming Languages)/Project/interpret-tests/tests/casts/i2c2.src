@@ -1,0 +1,5 @@
+.ippcode23
+
+DEFVAR GF@x
+
+INT2CHAR GF@x string@h

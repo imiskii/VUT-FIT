@@ -1,0 +1,23 @@
+.ippcode23
+
+DEFVAR GF@a
+DEFVAR GF@b
+DEFVAR GF@x
+
+MOVE GF@a string@hello
+MOVE GF@b string@world
+
+CONCAT GF@x GF@a GF@b
+WRITE GF@x
+WRITE string@|
+
+CONCAT GF@x string@bye GF@b
+WRITE GF@x
+WRITE string@|
+
+CONCAT GF@x GF@a string@body
+WRITE GF@x
+WRITE string@|
+
+CONCAT GF@x string@bye string@bye
+WRITE GF@x

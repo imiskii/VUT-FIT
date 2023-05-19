@@ -8,15 +8,15 @@ In this repository, I store some of my projects from my studies at the [Faculty 
 
 ### 1. Semester
 
-* __IDM (Discrete Mathematics)__ - math 😄
-* __ILG (Linear Algebra)__ - another math 😄
+* __IDM (Discrete Mathematics)__
+* __ILG (Linear Algebra)__
 * __IEL (Electronics for Information Technology)__ - project
 * __IUS (Introduction to Software Engineering)__
 * __IZP (Introduction to Programming Systems)__
 
 ### 2. Semester
 
-* __IMA1 (Mathematical Analysis 1)__ - math 😁
+* __IMA1 (Mathematical Analysis 1)__
 * __INC (Digital Systems Design)__ - project
 * __IOS (Operating Systems)__ - 2 projects
 * __ISU (Machine Level Programming)__
@@ -29,22 +29,22 @@ In this repository, I store some of my projects from my studies at the [Faculty 
 
 * __IAL (Algorithms)__ - projects
 * __IFJ (Formal Languages and Compilers)__ - team project [here](https://github.com/imiskii/VUT-FIT-IFJ)
-* __IMA2 (Mathematical Analysis 2)__ - math 😁
+* __IMA2 (Mathematical Analysis 2)__
 * __INP (Design of Computer Systems)__ - 2 projects
-* __IPT (Probability and Statistics)__ - math 😁
+* __IPT (Probability and Statistics)__
 * __ISS (Signals and Systems)__ - project
 * __ITU (User Interface Programming)__ - team project [here](https://github.com/imiskii/VUT-FIT-ITU)
 
 ### 4. Semester
 
-* __IDS (Database Systems)__ - In progress...
-* __IPK (Computer Communications and Networks)__ - In progress...
-* __IPP (Principles of Programming Languages)__ - In progress...
-* __IZU (Fundamentals of Artificial Intelligence)__ - In progress...
-* __ICP (The C++ Programming Language)__ - In progress...
-* __ISJ (Scripting Languages)__ - In progress...
-* __ITS (Testing and Dynamic Analysis)__ - In progress...
-* __ITY (Typography and Publishing)__ - In progress...
+* __IDS (Database Systems)__ - team project [here](https://github.com/imiskii/VUT-FIT-IDS)
+* __IPK (Computer Communications and Networks)__ - 2 projects (TCP/UDP client and TCP/UDP port scanner)
+* __IPP (Principles of Programming Languages)__ - project
+* __IZU (Fundamentals of Artificial Intelligence)__ - 2 projects + prolog tasks
+* __ICP (The C++ Programming Language)__ - team project [here](https://github.com/imiskii/VUT-FIT-ICP-Pacman)
+* __ISJ (Scripting Languages)__ - 8 projects and mini tasks
+* __ITS (Testing and Dynamic Analysis)__ - project
+* __ITY (Typography and Publishing)__ - 5 projects
 
 ## Disclaimer a copyright
 

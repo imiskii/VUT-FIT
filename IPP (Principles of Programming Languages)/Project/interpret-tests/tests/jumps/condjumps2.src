@@ -1,0 +1,7 @@
+.ippcode23
+
+
+JUMPIFEQ jmp string@20 int@20
+
+
+LABEL jmp

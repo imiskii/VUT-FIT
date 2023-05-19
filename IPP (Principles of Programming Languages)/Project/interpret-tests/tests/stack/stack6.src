@@ -1,0 +1,31 @@
+.ippcode23
+
+DEFVAR GF@a
+DEFVAR GF@b
+DEFVAR GF@x
+
+MOVE GF@a bool@true
+MOVE GF@b bool@false
+
+PUSHS bool@true
+PUSHS bool@false
+PUSHS bool@true
+PUSHS bool@true
+
+ANDS
+POPS GF@x
+WRITE GF@x
+
+ORS
+POPS GF@x
+WRITE GF@x
+
+PUSHS GF@a
+NOTS
+
+PUSHS GF@b
+NOTS
+ORS
+
+POPS GF@x
+WRITE GF@x

@@ -1,0 +1,11 @@
+.IPPcode23
+DEFVAR GF@counter
+
+READ GF@counter int
+WRITE GF@counter
+
+READ GF@counter string
+WRITE GF@counter
+
+READ GF@counter bool
+WRITE GF@counter

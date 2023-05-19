@@ -1,0 +1,13 @@
+.ippcode23
+
+DEFVAR GF@a
+
+PUSHS int@11
+PUSHS string@hello
+PUSHS string@world
+PUSHS bool@true
+
+CLEARS
+
+POPS GF@a
+WRITE GF@a

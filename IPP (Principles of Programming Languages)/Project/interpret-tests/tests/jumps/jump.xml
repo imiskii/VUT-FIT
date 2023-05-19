@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<program language="IPPcode23">
+ <instruction order="1" opcode="JUMP">
+  <arg1 type="label">skip3</arg1>
+ </instruction>
+ <instruction order="2" opcode="LABEL">
+  <arg1 type="label">skip1</arg1>
+ </instruction>
+ <instruction order="3" opcode="LABEL">
+  <arg1 type="label">skip2</arg1>
+ </instruction>
+ <instruction order="4" opcode="DEFVAR">
+  <arg1 type="var">GF@a</arg1>
+ </instruction>
+ <instruction order="5" opcode="MOVE">
+  <arg1 type="var">GF@a</arg1>
+  <arg2 type="int">42</arg2>
+ </instruction>
+ <instruction order="6" opcode="JUMP">
+  <arg1 type="label">skip4</arg1>
+ </instruction>
+ <instruction order="7" opcode="LABEL">
+  <arg1 type="label">skip3</arg1>
+ </instruction>
+ <instruction order="8" opcode="JUMP">
+  <arg1 type="label">skip2</arg1>
+ </instruction>
+ <instruction order="9" opcode="LABEL">
+  <arg1 type="label">skip4</arg1>
+ </instruction>
+ <instruction order="10" opcode="WRITE">
+  <arg1 type="var">GF@a</arg1>
+ </instruction>
+</program>

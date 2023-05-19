@@ -1,0 +1,6 @@
+.IPPcode23
+DEFVAR GF@counter
+MOVE GF@counter string@h\110\032\110
+CONCAT GF@counter GF@counter string@a
+
+WRITE GF@counter

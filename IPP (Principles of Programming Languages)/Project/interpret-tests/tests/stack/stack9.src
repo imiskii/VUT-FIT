@@ -1,0 +1,25 @@
+.ippcode23
+
+DEFVAR GF@x
+
+PUSHS jmp
+PUSHS int@5
+PUSHS int@5
+
+JUMPIFEQS
+
+WRITE string@bad
+
+LABEL jmp
+write string@good
+
+PUSHS gmp
+PUSHS int@5
+PUSHS int@6
+
+JUMPIFNEQS
+
+WRITE string@bad
+
+LABEL gmp
+write string@good

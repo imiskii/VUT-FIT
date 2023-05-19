@@ -1,0 +1,17 @@
+.ippcode23
+
+DEFVAR GF@a
+MOVE GF@a string@skip
+
+CALL skip1
+LABEL skip2
+RETURN
+
+#skip
+MOVE GF@a string@noskip
+
+LABEL skip1
+CALL skip2
+
+
+WRITE GF@a

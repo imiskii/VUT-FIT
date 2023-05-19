@@ -1,0 +1,47 @@
+.ippcode23
+
+DEFVAR GF@a
+DEFVAR GF@b
+DEFVAR GF@x
+
+MOVE GF@a int@5
+MOVE GF@b float@+3.14
+
+PUSHS int@5
+PUSHS int@100
+PUSHS float@-3.14
+PUSHS float@42.42
+
+ADDS
+POPS GF@x
+WRITE GF@x
+
+SUBS
+POPS GF@x
+WRITE GF@x
+
+PUSHS int@5
+PUSHS int@100
+PUSHS float@-3.14
+PUSHS float@42.42
+
+IDIVS
+POPS GF@x
+WRITE GF@x
+
+MULS
+POPS GF@x
+WRITE GF@x
+
+PUSHS int@100
+PUSHS GF@a
+PUSHS float@-3.14
+PUSHS GF@b
+
+SUBS
+POPS GF@x
+WRITE GF@x
+
+IDIVS
+POPS GF@x
+WRITE GF@x

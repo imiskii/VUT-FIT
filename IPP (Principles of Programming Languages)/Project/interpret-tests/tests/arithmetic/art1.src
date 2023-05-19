@@ -1,0 +1,84 @@
+.ippcode23
+
+DEFVAR GF@a
+DEFVAR GF@b
+DEFVAR GF@c
+DEFVAR GF@d
+
+MOVE GF@a int@10
+MOVE GF@b int@-2
+MOVE GF@c int@0
+MOVE GF@d string@5
+
+
+DEFVAR GF@x
+
+ADD GF@x GF@a GF@b
+WRITE GF@x
+WRITE string@|
+
+ADD GF@x int@10 GF@a
+WRITE GF@x
+WRITE string@|
+
+ADD GF@x GF@a int@10 
+WRITE GF@x
+WRITE string@|
+
+ADD GF@x int@50 int@10 
+WRITE GF@x
+WRITE string@||
+###
+
+
+SUB GF@x GF@a GF@b
+WRITE GF@x
+WRITE string@|
+
+SUB GF@x int@10 GF@a
+WRITE GF@x
+WRITE string@|
+
+SUB GF@x GF@a int@10 
+WRITE GF@x
+WRITE string@|
+
+SUB GF@x int@50 int@10 
+WRITE GF@x
+WRITE string@||
+
+###
+
+MUL GF@x GF@a GF@b
+WRITE GF@x
+WRITE string@|
+
+MUL GF@x int@50 GF@b
+WRITE GF@x
+WRITE string@|
+
+MUL GF@x GF@b int@50
+WRITE GF@x
+WRITE string@|
+
+MUL GF@x int@-2 int@50
+WRITE GF@x
+WRITE string@||
+
+###
+
+IDIv GF@x GF@a GF@b
+WRITE GF@x
+WRITE string@|
+
+IDIv GF@x GF@a int@10
+WRITE GF@x
+WRITE string@|
+
+IDIv GF@x int@10 GF@a
+WRITE GF@x
+WRITE string@|
+
+IDIv GF@x int@-5 int@-2
+WRITE GF@x
+WRITE string@||

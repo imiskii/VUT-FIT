@@ -1,0 +1,5 @@
+.ippcode23
+
+CREATEFRAME
+
+MOVE TF@a int@42

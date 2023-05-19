@@ -1,0 +1,99 @@
+%
+% Projekt: proj4.tex
+% Autor:   Michal Ľaš
+% Datum:   11.04.2023
+% 
+
+
+\documentclass[a4paper, 11pt, a4paper]{article}
+\usepackage[left=2cm,text={17cm, 24cm},top=3cm]{geometry}
+
+\usepackage[slovak]{babel}
+\usepackage{times}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+\DeclareUrlCommand\url{\def\UrlLeft{<}\def\UrlRight{>} \urlstyle{tt}}
+
+
+\begin{document}
+
+
+\begin{titlepage}
+    \begin{center}
+            \textsc{\Huge Vysoké učení technické v~Brně \\}
+            \vspace{0.5em}
+            \textsc{\huge Fakulta informačních technologií \\}
+        \vspace{\stretch{0.382}}
+            {\LARGE Typografie a~publikování\,--\,4. projekt \\ 
+            \vspace{0.4em}
+            \Huge Citácie a~bibliografický záznam}
+        \vspace{\stretch{0.618}}
+    \end{center}
+    {\Large \today \hfill Michal Ľaš}
+\end{titlepage}
+
+
+\section{Čo je to typografia}
+
+\begin{quotation}
+    \emph{Typografia je disciplína zaoberajúca sa písmom, predovšetkým jeho správnym výberom, použitím a~sadzbou. Cieľom typografie je zaistiť čitateľovi jednoduchšie čítanie, efektívnejšie vnímanie čítaného textu a~prípadne aj vylúčiť možné chyby a~nejednoznačnosti vyplývajúce z~viacerých možných zápisov rovnakej vety.}~\cite{Strafelda.Typografie.2020}
+\end{quotation}
+
+Aj keď to na prvý pohľad nemusí byť zjavné, vzhľad a~tón dokumentu hrá veľkú rolu v~celkovom dojme a~komunikačnej efektívnosti dokumentu. Touto témou sa už zoberalo viacero štúdií, mimo iné aj táto~\cite{EvansM.B.2004Teos}.
+
+\section{Ako na vlastnú typografiu}
+
+\subsection{Používajte správny font písma}
+
+Font je digitálny súbor, ktorý uchováva potrebné informácie o~vlastnostiach znakov, ako napríklad tvar písmen a~ich rozmery. Fonty môžu byť rastrové (bitmapové) alebo vektorové. Správny výber fontu je veľmi dôležitý pre typograficky správne napísaný dokument. Avšak nie len samotný tvar znakov, ale aj použitá technológia môžu výsledný dokument značne ovplyvniť.~\cite{typo.Zelenka.fonty.2003}
+
+\subsection{Vizuálna gramotnosť je dôležitá}
+
+Rovnako ako prirodzená reč, aj grafické symboly a~nehláskové znaky majú svoje systémové pravidlá -- gramatiku. Táto vizuálna gramatika obsahuje pravidlá pre používanie tvarov, ich kombinácií a~farieb, v~ktorých sa vyskytujú.~\cite{typo.Fassati.vizgram.2004}
+
+\subsection{Editory}
+
+Aby ste mali vôbec možnosť tvoriť typograficky správne dokumenty, je dôležité písať dokument v~kvalitnom editore.
+
+Dnešný trh ponúka množstvo editorov. Najznámejšie sú napríklad PSPad, NotePad, WordPad, Word z~balíku Office od firmy Microsoft, Writer z~balíku LibreOffice, a~pod. Jedná sa o~textové procesory, avšak existujú aj sádzacie sytémy, akým je napríklad systém \LaTeX.~\cite{Lukes.edit.2018} 
+
+
+\section{\LaTeX}
+
+\LaTeX\ je voľne šírená nadstavba systému \TeX, ktorý vytvoril Donald E. Knuth. Táto nadstavba mala sprístupniť systém sádzania dokumentov bežným užívateľom. \LaTeX\ funguje inak ako iné textové editory. Pre sádzanie dokumentu sa používajú definované príkazy, ktorými užívateľ vyberá, čo chce vysádzať, nie ako to chce vysádzať.~\cite{Rybicka.2003}
+
+\subsection{Štruktúra zdrojového súboru}
+
+\LaTeX\ má množstvo využití. Možno ho použiť na písanie článku, listu, knihy aj vytváranie prezentácií. Zdrojový súbor sa začína príkazom \texttt{documentclass}. Parametre tohto príkazu špecifikujú veľkosť písma a~triedu, do ktorej dokument spadá. Jednotlivé triedy potom určujú prostredie, možné príkazy a~aj formátovanie samotného dokumentu.~\cite{Mittelbach.Goossens.2004}
+
+\subsection{Matematické výrazy}
+
+Matematické výrazy a~rovnice v~\LaTeX u je možné vsádzať pomocou znaku \verb|$| v~riadkovom prostredí, prípadne pomocou kombinácie znakov \verb|\[| a~\verb|\]| je možné vsádzať samotné rovnice.~\cite{Kalvoda.LatexMath.2021}
+
+\subsection{Tabuľky}
+
+Ako základné prostredie pre sádzanie tabuliek v~\LaTeX u slúži prostredie \texttt{tabular}. Existujú však aj iné prostredia pre sádzanie rozsiahlejších tabuliek.~\cite{Svamberg.Tab.2001}
+
+\subsection{Prezentácie}
+
+Systém \LaTeX\ umožňuje aj vytváranie prezentácií.
+
+Je možné použiť napríklad triedu \texttt{Beamer} na začiatku zdrojového dokumentu. Jednotlivé snímky je potom možné vytvoriť nasledovne:
+\begin{verbatim}
+    \begin{frame}
+        \frametitle{Titulok snímku}
+        Obsah snímku
+    \end{frame}
+\end{verbatim}
+Celý snímok je teda obalený v~prostredí frame, nasleduje názov snímku a~jeho obsah.~\cite{Cerny.prezentace.2011}
+
+
+\newpage
+
+\bibliographystyle{czechiso.bst}
+\renewcommand{\refname}{Literatúra}
+\bibliography{proj4}
+
+\end{document}
