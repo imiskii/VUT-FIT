@@ -23,21 +23,21 @@ In this repository, I store some of my projects from my studies at the [Faculty 
 * __IZG (Computer Graphics Principles)__
 * __BAN4(English for Bachelors - Intermediate 2)__
 * __IJC (The C Programming Language)__ - 2 projects
-* __IVS (Practical Aspects of Software Design)__ - team project [here](https://github.com/SamuelSlavik/ivs_project_2)
+* __IVS (Practical Aspects of Software Design)__ - team project [here](https://github.com/imiskii/VUT-FIT-IVS-2)
 
 ### 3. Semester
 
 * __IAL (Algorithms)__ - projects
-* __IFJ (Formal Languages and Compilers)__ - team project [here](https://github.com/SamuelSlavik/ifj)
+* __IFJ (Formal Languages and Compilers)__ - team project [here](https://github.com/imiskii/VUT-FIT-IFJ)
 * __IMA2 (Mathematical Analysis 2)__
 * __INP (Design of Computer Systems)__ - 2 projects
 * __IPT (Probability and Statistics)__
 * __ISS (Signals and Systems)__ - project
-* __ITU (User Interface Programming)__ - team project [here](https://github.com/ondrejjanecka/yummyCook)
+* __ITU (User Interface Programming)__ - team project [here](https://github.com/imiskii/VUT-FIT-ITU)
 
 ### 4. Semester
 
-* __IDS (Database Systems)__ - team project [here](https://github.com/adamlazik1/ids)
+* __IDS (Database Systems)__ - team project [here](https://github.com/imiskii/VUT-FIT-IDS)
 * __IPK (Computer Communications and Networks)__ - 2 projects (TCP/UDP client and TCP/UDP port scanner)
 * __IPP (Principles of Programming Languages)__ - project
 * __IZU (Fundamentals of Artificial Intelligence)__ - 2 projects + prolog tasks
