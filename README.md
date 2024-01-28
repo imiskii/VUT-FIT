@@ -23,28 +23,28 @@ In this repository, I store some of my projects from my studies at the [Faculty 
 * __IZG (Computer Graphics Principles)__
 * __BAN4(English for Bachelors - Intermediate 2)__
 * __IJC (The C Programming Language)__ - 2 projects
-* __IVS (Practical Aspects of Software Design)__ - team project [here](https://github.com/imiskii/VUT-FIT-IVS-2)
+* __IVS (Practical Aspects of Software Design)__ - calculator team project [here](https://github.com/imiskii/VUT-FIT-IVS-2)
 
 ### 3. Semester
 
-* __IAL (Algorithms)__ - projects
-* __IFJ (Formal Languages and Compilers)__ - team project [here](https://github.com/imiskii/VUT-FIT-IFJ)
+* __IAL (Algorithms)__ - projects (singly linked list, double linked list, binary tree, hash table, stack, queue) 
+* __IFJ (Formal Languages and Compilers)__ - compiler for PHP programing language team project [here](https://github.com/imiskii/VUT-FIT-IFJ)
 * __IMA2 (Mathematical Analysis 2)__
-* __INP (Design of Computer Systems)__ - 2 projects
+* __INP (Design of Computer Systems)__ - description of prcessor in VHDL && Vernam Cipher project focused on chained instruction processing
 * __IPT (Probability and Statistics)__
-* __ISS (Signals and Systems)__ - project
-* __ITU (User Interface Programming)__ - team project [here](https://github.com/imiskii/VUT-FIT-ITU)
+* __ISS (Signals and Systems)__ - analyzing of piano signal
+* __ITU (User Interface Programming)__ - mobile aplication for managing cooking recipes team project [here](https://github.com/imiskii/VUT-FIT-ITU)
 
 ### 4. Semester
 
-* __IDS (Database Systems)__ - team project [here](https://github.com/imiskii/VUT-FIT-IDS)
+* __IDS (Database Systems)__ - common constructions in the SQL language team project [here](https://github.com/imiskii/VUT-FIT-IDS)
 * __IPK (Computer Communications and Networks)__ - 2 projects (TCP/UDP client and TCP/UDP port scanner)
-* __IPP (Principles of Programming Languages)__ - project
-* __IZU (Fundamentals of Artificial Intelligence)__ - 2 projects + prolog tasks
-* __ICP (The C++ Programming Language)__ - team project [here](https://github.com/imiskii/VUT-FIT-ICP-Pacman)
-* __ISJ (Scripting Languages)__ - 8 projects and mini tasks
-* __ITS (Testing and Dynamic Analysis)__ - project
-* __ITY (Typography and Publishing)__ - 5 projects
+* __IPP (Principles of Programming Languages)__ - project IPPcode23 language parser && IPPcode23 interpreter 
+* __IZU (Fundamentals of Artificial Intelligence)__ - A* alogorithm in Python && project in prolog + prolog tasks for final exam
+* __ICP (The C++ Programming Language)__ - Pacman game team project [here](https://github.com/imiskii/VUT-FIT-ICP-Pacman)
+* __ISJ (Scripting Languages)__ - 8 small projects and mini tasks
+* __ITS (Testing and Dynamic Analysis)__ - project (test design + test implementation for web site)
+* __ITY (Typography and Publishing)__ - 5 projects focused on different topics
 
 ### 5. Semester
 
