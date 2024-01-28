@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/2ff75daa4b.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <title>Bluetooth Metronome</title>
+</head>
+<body>
+    <main>
+        <div class="column-center-box">
+            <!-- Connect button -->
+            <div class="column-left-box">
+                <div class="short-box">
+                    <button id="conection-btn" class="nrm-btn-filled" onclick="bluetooth_connect()">Connect</button>
+                    <h3 id="log-state">Device is not connected!</h3>
+                </div>
+            </div>
+            <!-- Counter -->
+            <div class="column-center-box">
+                <div class="tempo-circle">
+                    <h2>BPM</h2>
+                    <h1 id="bpm">80</h1>
+                </div>
+            </div>
+            <!-- Metronome speed -->
+            <div class="column-center-box">
+                <div class="row-center-box">
+                    <button id="minus-tempo" class="circle-btn" onclick="tempo_minus()">
+                        <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <input id="tempo-range" type="range" min="20" max="240" value="80" oninput="set_tempo()">
+                    <button id="plus-temp" class="circle-btn" onclick="tempo_plus()">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+                <button id="play-stop" class="circle-btn" onclick="run_metronome()">
+                    <i class="fa-solid fa-play"></i>
+                    <i class="fa-solid fa-stop hide"></i>
+                </button>
+            </div>
+            <!-- Metronome notes -->
+            <div class="column-center-box">
+                <label for="rythm">Beat/bar</label>
+                <select name="rythm" id="rythm-select" oninput="set_rythm()">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option selected value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                </select>
+            </div>
+            <!-- Metronome volume -->
+            <div class="column-center-box">
+                <label for="volume-range">Volume</label>
+                <input id="volume-range" type="range" min="0" max="90" value="20" oninput="set_volume()">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-top">
+            <p> Bluetooth Metronome | Michal Ľaš (xlasmi00) </p>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; IMP Project 2023</p>
+        </div>
+    </footer>
+</body>
+</html>

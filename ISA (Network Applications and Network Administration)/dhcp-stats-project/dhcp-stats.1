@@ -1,0 +1,54 @@
+.TH DHCP-STATS 1 "October 18, 2023" "Version 1.0" "dhcp-stats Manual"
+
+.SH NAME
+dhcp-stats \- program for monitoring DHCP traffic and generating utilization statistics
+
+.SH SYNOPSIS
+.B dhcp-stats
+[\-r | --read \fI<filename>\fR] [\ -i | --interface \fI<interface-name>\fR] [\-t | --lctime \fI<seconds>\fR] \fI<ip-prefix> [ <ip-prefix> [ ... ] ]
+
+.SH DESCRIPTION
+.B dhcp-stats
+is a command-line program that monitors DHCP traffic on the specified network interface or processes pcap files to generate utilization statistics for given IP prefixes.
+
+.PP
+This program allows retrieving information about network prefix utilization in terms of allocated IP addresses. 
+Upon execution, the program begins monitoring DHCP traffic on the selected interface or processes a specified pcap file.
+It generates statistics on the utilization of the network prefix provided in the command line.
+When the prefix is filled to more than 50%, the tool notifies the administrator and creates a log using a syslog server.
+
+.SH OPTIONS
+.IP "\-r | --read \fI<filename>\fR"
+Pcap file from where dhcp-stats tool can read previously monitored DHCP traffic.
+
+.IP "\-i | --interface \fI<interface-name>\fR"
+Specifies the network interface where the dhcp-stats tool will monitor DHCP packets. If a single -i | --interface option is provided, the application will list available interfaces.
+
+.IP "\-t | --lctime \fI<seconds>\fR"
+Frequency of lease time check for monitored ip addresses in seconds (default is 60 seconds).
+
+.SH ARGUMENTS
+.IP "\fI<ip-prefix>\fR"
+Specifies the network prefixes for which utilization statistics will be generated. Multiple IP prefixes can be provided.
+
+.SH EXAMPLES
+.B ./dhcp-stats -r dhcp.pcap -i eth0 -t 30 192.168.1.0/24 10.0.0.0/8
+.B ./dhcp-stats -r dhcp.pcap 172.16.1.0/28
+.B ./dhcp-stats -i eth0 172.16.1.0/28 10.1.1.1/24
+.B ./dhcp-stats -i 
+.B ./dhcp-stats -h
+
+.SH LOGGING
+If the utilization of an IP prefix exceeds 50%, the program logs the following message:
+
+.PP
+\fBprefix x.x.x.x/y exceeded 50% of allocations.\fR
+
+.SH AUTHOR
+Michal Ľaš <xlasmi00>
+
+.SH VERSION
+dhcp-stats version 1.0
+
+.SH DATE
+October 29, 2023
