@@ -54,6 +54,12 @@ In this repository, I store some of my projects from my studies at the [Faculty 
 * __ISA (Network Applications and Network Administration)__ - project (tool for monitoring allocated IPv4 addresses based on analyzing DHCP packets)
 * __ILI (Advanced Topics of Linux Administration)__ - project
 
+### 6. Semester
+
+* __KRY (Cryptography)__ - project (application of SHA-256, MAC and length extension attack)
+* __MTIa (Modern Trends in Informatics)__
+* __IBT (Bachelor's Thesis)__ - my [bachelor's thesis](https://github.com/imiskii/PQBlockchain) 
+
 ## Disclaimer a copyright
 
 All materials available here serve exclusively for inspiration and study support.
