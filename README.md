@@ -50,7 +50,7 @@ In this repository, I store some of my projects from my studies at the [Faculty 
 
 * __IIS (Information Systems)__ - team project [here](https://github.com/imiskii/IIS-EventManagerIS)
 * __IMP (Microprocessors and Embedded Systems)__ - project (Bluetooth Metronome)
-* __IMS (Modelling and Simulation)__ - team project [here](https://github.com/adamlazik1/ims-project)
+* __IMS (Modelling and Simulation)__ - team project [here](https://github.com/imiskii/ims-project)
 * __ISA (Network Applications and Network Administration)__ - project (tool for monitoring allocated IPv4 addresses based on analyzing DHCP packets)
 * __ILI (Advanced Topics of Linux Administration)__ - project
 
