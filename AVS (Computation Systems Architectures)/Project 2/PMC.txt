@@ -1,0 +1,132 @@
+Architektury Výpočetních Systémů (AVS 2024)
+Projekt č. 2 (PMC)
+Login: xlasmi00
+
+Úloha 1: Paralelizace původního řešení
+===============================================================================
+1) Kterou ze smyček (viz zadání) je vhodnější paralelizovat a co způsobuje 
+   neefektivitu paralelizaci té druhé?
+   
+   Efektívnejšie je paralelizovať cyklus v metóde marchCubes(). Väčšia časť výpočtu tak prebieha
+   paralelne. Cyklus v metóde evaluateFieldAt() je "viac zanorenejší" a jeho paralelizáciou
+   sa paralelne spracováva menšia časť výpočtu. V podsate ak paralelizujeme marchCubes(), tak tým
+   prebieha pralelne aj výpočet v evaluateFieldAt().
+
+2) Jak jste ve funkci LoopMeshBuilder::marchCubes zajistili správný výsledek 
+  (počet trojúhelníků) vrácený touto funkcí? Popište jaké řešení jste zvolili a proč.  
+
+   Keďže v tomto prípade viacero vlákien prostupuje k rovnakej premennej, tak treba zaistiť aby
+   konečný výsledok bol správny. Ja som použil redukciu, ale je to možné aj vytvorením kritickej sekcie.
+  
+3) Jaké plánování (rozdělení práce mezi vlákna) jste zvolili a proč? Popište, na
+   jakých datech (počet vláken, velikost problému) jste k závěrům došli.  
+
+   Zvolil som plánovanie typu guided, pretože malo najlepšie výsledky. Testoval som statické a
+   dynamické plánovanie s chunk veľkosťami 8, 16, 32 a 64, na 18 a 36 vláknach a veľkosťami vstupov
+   --grid 64 a 128 na dátach dragon_vrip_res1.pts a dragon_vrip_res4.pts.
+
+   Statické plánovanie bolo lepšie pri menších vstupoch naopak dynamické pre väčšie vstupy. Kompromis
+   som našiel až pri plánovaní guided. Samotné chunk veľkosti nemali na výsledok až tak veľký vplyv.
+
+
+Úloha 2: Paralelní průchod stromem
+===============================================================================
+1) Stručně popište použití OpenMP tasků ve vašem řešení. 
+
+   V metóde marchCubes() sa spustia paralelné vlákna a jedniné vlákno master zavolá
+   rekurzívnu metódu decomposeOctree(), ktorá rekurziou simuluje štruktúru Octree tým,
+   že vytvorí 8 nových taskov rekurzívne volajúcich metódu decomposeOctree() s menšou
+   podčasťou poľa (field). Následne paralelné vlákna začnú spracovávať tásky tak, že
+   vytvárajú nové osmice taskov (opäť rekurzívnym volaním mezódy decomposeOctree()) kým 
+   veľkosť hrany (cutoff) nie je menšia alebo rovnná 2. V takom prípade sa volá metóda buildCube() 
+   a nastáva návrat z rekurzie. Až všetky tasky skončia tak prvé volanie decomposeOctree(),
+   ktoré spustilo master vlákno vráti celkový počet vytvorených trojúholníkov. 
+
+2) Jakou hodnotu cut-off jste zvolili? Jaké hodnoty "cut-off" jste zkoušeli, 
+   na jak velkých velikostech problému a jakých času jste dosáhli? 
+   Odůvodněte vaši volbu.
+
+   Skúšal som hodnoty cut-off 1, 2, 3 a 4. Najlepšie mi vychádzalo použiť hodnotu 2.
+   Tieto hodnoty som skúšal na dátach bun_zipper_res3.pts, dragon_vrip_res1.pts a 020.pts,
+   pri --grid nastovenom na 64 a všetkých 36 vláknach. Hodnota 2 je vhodná preto, že pre
+   malé podčasti (kocky) je nevýhodné vytvárať nový task, ktorého spracovanie predstavuje 
+   réžiu navyše. V takom prípade je lepšie prejsť danú podčasť (kocku) sekvenčne.
+
+      bun_zipper_res3   dragon_vrip_res1  020.pts
+   1: ~360ms            ~2700ms           ~200ms
+   2: ~300ms            ~2750ms           ~130ms
+   3: ~560ms            ~2810ms           ~180ms
+   4: ~700ms            ~3630ms           ~280ms
+
+3) Jakým způsobem zajišťujete ukládání trojúhelníků z několika vláken současně 
+   v metodě LoopMeshBuilder::emitTriangle?
+
+   Pomocou kritickej sekcie aby mohlo súčasne ukladať iba jedno vlákno.
+
+
+Úloha 3: Grafy škálování všech řešení
+===============================================================================
+
+1) Stručně zhodnoťte efektivitu vytvořených řešení 
+   (na základě VŠECH odevzdaných grafů ŠKÁLOVÁNÍ).
+
+   Z Grid scaling je možné vidieť, že s rastúcou veľkosťou vstupu je tree varianta rýchlejšia.
+   Strong scaling pre loop aj tree ukazuje, že obe verzie dobre škálujú približne do hodnoty 16 vlákien.
+   Použitie viacerých vlákien už výpočet ďalej nezrýchľuje. Pri slabom škálovaní je loop varianta
+   celkom stabilná, keďže sa zvyšuje počet vlákien ako aj záťaž na jednotlivé vlákna.
+   Loop varianta je lepšie škáluje so zvyšujúcim sa počtom vlákien ako tree varianta, ale dĺžka
+   riešenia pomocou loop je stále dlhšia.
+
+2) V jakém případě (v závislosti na počtu bodů ve vstupním souboru a velikosti 
+   mřížky) bude vaše řešení 1. úlohy neefektivní? 
+   (pokud takový případ existuje a je vidět ve vašem grafu)
+
+   Výpočet bude neefektívny ak použijeme malý vstup pre veľa vlákien. Efektivita vlákien
+   je potom nízka. Je to aj vidieť na dátch z VTune pri builder tree verzii na 36 vláknach.
+
+3) Je (nebo není) stromový algoritmus efektivnější z pohledu slabého škálování 
+   vzhledem ke vstupu?
+
+   Octree je efektívnejšie z pohľadu slabého škálovania pri väčších vstupoch, kde jeho hierarchická dekompozícia 
+   obmedzuje zbytočné spracovanie a umožňuje lepšiu distribúciu práce medzi vláknami.
+
+4) Do souboru 3_4.txt napište svůj login, který používáte na Barboře, na druhý
+   řádek napište počet úloh (jobs), které jste spustili za dobu řešení projektu 2
+   a na třetí řádek uveďte, kolik času tyto úlohy běžely (formát HH:MM:SS). 
+   V souboru 3_4.txt využijte předpřipravené kostry - údaje přepište. Můžete využít
+   údajů ze Slurm plánovače, nepočítejte úlohy se suffixem (přepínač -X).
+
+   xlasmi00
+   18
+   01:38:24
+
+Úloha 4: Analýza využití jader pomocí VTune
+================================================================================
+
+1) Jaké bylo průměrné využití jader pro všechny tři implementace s omezením na 
+   18 vláken? Hodnoty zapište do souboru 4_1.txt
+   (využijte předpřipravené kostry v souboru - čísla přepište).
+   
+   ref: 2.8%
+   loop: 46.9%
+   tree: 41.4%
+
+2) Jaké bylo průměrné využití jader pro všechny tři implementace s využitím 
+   všech jader? Hodnoty zapište do souboru 4_2.txt (využijte předpřipravené 
+   kostry v souboru - čísla přepište).
+   
+   ref: 2.8%
+   loop: 83.6%
+   tree: 54.7%
+
+3) Vypočítejte efektivitu vašeho řešení loop a tree vůči ref pro 18 a 36 vláken. 
+   Hodnoty naměřte ručně na výpočetním uzlu, ne přes VTune. Použijte následující parametry:
+   
+   ./PMC --builder {ref, tree, loop} -t {18, 36} --grid 128 ../data/bun_zipper_res3.pts 
+   
+   Hodnoty zapište do souboru 4_3.txt 
+   (využijte předpřipravené kostry v souboru - čísla přepište):
+   "loop (18)" vs. "ref" 97.83%
+   "tree (18)" vs. "ref" 292.77%
+   "loop (36)" vs. "ref" 79,50%
+   "tree (36)" vs. "ref" 169.43%

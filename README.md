@@ -4,7 +4,7 @@
 
 In this repository, I store some of my projects from my studies at the [Faculty of Information Technology VUT in Brno](https://www.fit.vut.cz/.cs).
 
-## My subjects
+## Bachelor's programme: Information Technology
 
 ### 1. Semester
 
@@ -59,6 +59,18 @@ In this repository, I store some of my projects from my studies at the [Faculty 
 * __KRY (Cryptography)__ - project (application of SHA-256, MAC and length extension attack)
 * __MTIa (Modern Trends in Informatics)__
 * __IBT (Bachelor's Thesis)__ - my [bachelor's thesis](https://github.com/imiskii/PQBlockchain) 
+
+
+## Master's programme: Information Technology and Artificial Intelligence, cybersecurity specialization
+
+### 1. Semester
+
+* __AVS (Computation Systems Architectures)__ - one project on vectorization and second project on prallelization with OpenMP pragmas
+* __BIS (Information System Security)__ - CTF like project
+* __BIO (Biometric Systems)__ - team project [Finger Print Vein Enhancement tool for Biometric Systems](https://github.com/imiskii/BIO-FPVE)
+* __MSP (Statistics and Probability)__ - 2 projects on statistics, basic statistics and linear regression
+* __TIN (Theoretical Computer Science)__ - 2 project from field of regular, context-free  languages, algorithm complexity and reductions
+* __SCO (Secure Coding)__ - paper on Secure smart contract coding
 
 ## Disclaimer a copyright
 

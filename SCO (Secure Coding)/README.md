@@ -1,0 +1,3 @@
+# Secure Coding
+
+This paper aims to provide an overview of common vulnerabilities in smart contracts and the tools available to improve their security. Smart contracts are a crucial part of decentralized finance (DeFi), but their vulnerabilities can lead to significant financial losses, which makes them unreliable to manage valuable assets. This paper highlights the need to make smart contracts more secure and reliable by providing statistics about crypto crimes, discussing various vulnerabilities, and examining tools to enhance security. By understanding these risks and tools, developers can build safer smart contracts and contribute to a more secure DeFi ecosystem.

@@ -1,0 +1,70 @@
+#### Stručně ale věcně odpovězte na následující otázky: ######
+
+1. Jaká byla dosažena výkonnost v Intel Advisoru pro implementace ref, line a batch
+(v GFLOPS)? (0.5b)
+==============================================================================
+
+ref: loop: 0,719; summary: 2,992
+line: loop: 17,373; summary: 16,034
+batch: loop: 26,951; summary: 22,129
+
+
+2. Porovnejte implementaci referenčního rešení oproti "Line" a "Batch" implementaci. 
+Jakým způsobem jsou načítána data, proč, a jaký to má vliv na výkon. (1b)
+==============================================================================
+
+ref: Dáta sú spracovávané postupne po riadkoch. Pre každý pixel (jeden element z dát) sa počíta
+limit v ktorej sa prekročí práhová hodnota, ktorá by ďalej pokračovala do nekonečna. Cyklus, v ktorom
+sa tento limit počíta, sa však nedá vektorizovať kvôli konfliktu typu RAW. Okrem toho sa tu nachádza
+skok, ktorý pravdepodobne ani nemožno predikovať.
+
+line: V line som vymenil poradie dvoch vnútorných cyklov. Naraz sa spracováva celý riadok
+a iteratívne sa počíta limit. Najzanorenejší cyklus sa týmto spôsobom môže efektívne vektorizovať.
+Využil som aj vlsatnosti symetrie a počíta sa len polovica dát. Po spracovaní každého riadku
+sa tento riadok skopíruje pomocou memcpy do druhej polovice dát.
+
+batch: Implementácia line má problém s tým, že sa príliš často zamieňa obsah cache. Celý riadok
+sa do cache nezmestí a tým, že sa opakovane iteruje celý riadok dochádza k častým výpadkom cache.
+Batch implementácia to rieši tak, že riadok rozdelí na menšie bloky. Výpadky cache sa týmto minimalizujú,
+keďže sa spočíta jedna celá časť (blok), ktorý sa zmestí do cache a až potom sa prechádza na ďalšiu časť (blok).
+
+
+3. Porovnejte Roofline všech modelů. Jsou implementace memory 
+bound? Jaká je vaše aritmetická intenzita? Dokázali byste ji přibližně spočítat 
+i ručně a jak? (1b)
+==============================================================================
+
+Všetky implementácie sú memory bound. Najlepšie ja na tom implementácia batch, ktorá sa blíži hranici
+compute bound. Najhoršia je implementácia ref.
+
+Aritmeticá intenzita najzanorenejšieho cyklu:
+ref: 0,167
+line: 0,49
+batch: 0,784
+
+Aritmetická intenzita je pomer medzi počtom vykonaných operácií a objemom prenesených dát. Je nutné
+teda spočítať počet FP operácii a množstvo dát načítaných z pamäte. Presný výpočetje pomerne náročný, 
+pretože sú tu FP operácie, ktoré sa vykonajú len ak budú splnené podmineky. Počet prnášaných dát v každom
+cykle bude 12 bytov. 4 byte pre iBuffer, 4 byte pre rBuffer a 4 byte pre data. Napríklad v prípade implementácie 
+line je v najzanorenejšom cykle 11 FP. Nepočítam však s dvomi FP operáciami vo vonkajšom cykle. Takto by výsledok
+mal byť 11 / 12, to však moc nezodpovedá skutočne nameranej AI.
+
+
+4. Komentujte vliv velikosti cache na výkonnost a chování na větších 
+velikostech domény. (1b)
+==============================================================================
+
+Pri väčších veľkostiach domény dochádza k častejším výpadkom cache. Keď veľkosť dát prekročí 
+kapacitu cache, zvýši sa počet výpadkov cache, čo zhoršuje výkon. Toto rieši implementácia batch
+v ktorej sa dáta spracovávajú postupne po menších blokoch. Dochádza tak k menšiemu počtu výpadkov.
+
+
+5. Jaký vliv na výkonnost má symetrie? Lze tento rozdíl pozorovat v Intel Advisor? 
+(nápověda: instrukce) (0.5b)
+============================================================================== 
+
+Pri využití symetrie stačí vypočítať len polovicu dát. Druhá polovica je len obrátená kópia.
+Toto má výrazný dopad na dobu výpočtu, keďže nám stačí spočítať o polovicu menej inštrukcii (+ réžia za memcpy).
+V Intel Advisor sa to prejaví aj na GFLOPS, ale celkom pekne to je vidieť na Trip Counts (Call Count)
+najzanorenejšieho cyklu, ktorý je polovičný oproti verzii, kde sa nevyužíva výhoda symetrie.
+
