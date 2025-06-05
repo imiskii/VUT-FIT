@@ -1,0 +1,5 @@
+# PDS-project
+
+This project focused on the analysis of network flows [dataset from CESNET](https://zenodo.org/records/13382427). The analysis is in the file [time_series_analysis.ipynb](./time_series_analysis.ipynb) and furthermore several methods for automatic anomaly detection are implemented in the files [anomaly_detection_IF.ipynb](./anomaly_detection_IF.ipynb), [anomaly_detection_kalman_filter.ipynb](./anomaly_detection_kalman_filter.ipynb) and [anomaly_detection_NN.ipynb](./anomaly_detection_NN.ipynb).
+
+The data is not part of the solution but can be downloaded from the [https://zenodo.org/records/13382427](https://zenodo.org/records/13382427). For proper operation, you must further install reqiurments and set the constant ```INPUT_FILE_PATH``` to the appropriate data folder in each ```*.ipynb``` file.

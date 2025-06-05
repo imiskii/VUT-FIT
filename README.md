@@ -72,6 +72,17 @@ In this repository, I store some of my projects from my studies at the [Faculty 
 * __TIN (Theoretical Computer Science)__ - 2 project from field of regular, context-free  languages, algorithm complexity and reductions
 * __SCO (Secure Coding)__ - paper on Secure smart contract coding
 
+### 2. Semester
+
+* __FLP (Functional and Logic Programming)__ - 2 projects, Haskell project (Decision tree alg.), Prolog project (Rubik's Cube solver)
+* __PRL (Parallel and Distributed Algorithms)__ - 2 projects, Odd-even transposition sort and Alg. for calculating the vertex level of a binary tree
+* __PIS (Advanced Information Systems)__ - project management information system, team project (frontend part), repository [here](https://github.com/AlfredoCode/pis-project).
+* __PDS (Data Communications, Computer Networks and Protocols)__ - network flow anomaly analysis project
+* __BDA (Blockchain and Decentralized Applications)__ - project modified ERC20 token smart contract
+* __CSOa (CCNA Cybersecurity Operations)__ - CTF like challange
+* __NSB (Projecting, Administration and Security)__
+
+
 ## Disclaimer a copyright
 
 All materials available here serve exclusively for inspiration and study support.
